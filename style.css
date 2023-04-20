@@ -1,0 +1,73 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, ol {
+    list-style: none;
+}
+#wrap {
+    overflow: hidden;
+    padding: 100px 0;
+}
+.list {
+    max-width: 500px;
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    border: 2px solid #222;
+    padding: 10px;
+}
+
+.list ul {
+    padding: 5px;
+    background: #222;
+}
+.list ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fff;
+    padding: 5px;
+}
+.list ul li + li {
+    border-top: 1px solid #222;
+}
+.list ul li.blank {
+    opacity: 0.5;
+}
+.list ul li.clone {
+    border: 1px solid #222;
+}
+.list ul li .txt {
+    padding-right: 5px;
+    font-size: 15px;
+    flex: 1;
+}
+.list ul li .move {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    border: 0;
+    background: none;
+    border-radius: none;
+    cursor: pointer;
+}
+.list ul li .move::before,
+.list ul li .move::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 2px;
+    background: #222;
+    content: '';
+}
+.list ul li .move::before {
+    top: 30%;
+}
+.list ul li .move::after {
+    bottom: 30%;
+}
